@@ -1,0 +1,4 @@
+repo of POC stuff ... try code out ... functions and methods for future use.
+
+-- added policy verify  ... returns a task id which we then need to do a 
+   show task to check on status ... async api calls ftw

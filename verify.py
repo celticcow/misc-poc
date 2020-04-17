@@ -45,8 +45,8 @@ def main():
 
     ip_addr  = "146.18.96.16" #args.m
     ip_cma   = "146.18.96.25" #args.c
-    user     = "roapi"
-    password = "1qazxsw2"
+    user     = "roapi" #needs actual user
+    password = "leftblank"
 
     policies_dic = {}
 
