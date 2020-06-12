@@ -21,7 +21,24 @@ mgmt_cli -r true -d 146.18.96.25 show objects order.1.ASC "name" in.1 "name" in.
 """
 
 def object_is_locked(ip_addr, name, sid):
-    pass
+    print("in object_is_locked()")
+
+    check_object = {
+        "order" : [{"ASC" : "name"}], 
+        "in" : ["name", name],
+        "details-level" : "full"      
+    }
+    
+    obj_result = apifunctions.api_call(ip_addr, "show-objects", check_object, sid)
+
+    print(json.dumps(obj_result))
+
+    print("\n\n")
+    
+    if(obj_result['objects'][0]['meta-info']['lock'] == "unlocked"):
+        return True
+    else:
+        return False
 
 """
 main 
@@ -40,6 +57,11 @@ def main():
 
     if(debug == 1):
         print("session id : " + sid)
+
+    if(object_is_locked(ip_addr, "dc-test-hot", sid)):
+        print("Proceed")
+    else:
+        print("Object Locked !!!!!")
 
     ### publish
     print("Start of Publish ... zzzzzz")
