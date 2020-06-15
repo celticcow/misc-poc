@@ -19,7 +19,7 @@ gregory.dunlap / celtic_cow
 """
 mgmt_cli -r true -d 146.18.96.25 show objects order.1.ASC "name" in.1 "name" in.2 "FXG-Office-VRF" details-level full --format json
 """
-
+"""
 def object_is_locked(ip_addr, name, sid):
     print("in object_is_locked()")
 
@@ -39,7 +39,7 @@ def object_is_locked(ip_addr, name, sid):
         return True
     else:
         return False
-
+"""
 """
 main 
 """
@@ -58,7 +58,8 @@ def main():
     if(debug == 1):
         print("session id : " + sid)
 
-    if(object_is_locked(ip_addr, "dc-test-hot", sid)):
+    #if(object_is_locked(ip_addr, "dc-test-hot", sid)):
+    if(apifunctions.object_is_locked(ip_addr, "dc-test-hot", sid)):
         print("Proceed")
     else:
         print("Object Locked !!!!!")
