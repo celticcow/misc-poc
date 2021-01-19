@@ -60,9 +60,9 @@ def main():
 
     #if(object_is_locked(ip_addr, "dc-test-hot", sid)):
     if(apifunctions.object_is_locked(ip_addr, "dc-test-hot", sid)):
-        print("Proceed")
+        print("Object is Locked")
     else:
-        print("Object Locked !!!!!")
+        print("unlocked ... proceed")
 
     ### publish
     print("Start of Publish ... zzzzzz")
